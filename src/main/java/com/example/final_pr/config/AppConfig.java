@@ -12,13 +12,7 @@ import org.springframework.security.config.annotation.method.configuration.Globa
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 
-import java.util.ArrayList;
-import java.util.List;
 
-import static com.example.final_pr.enums.FloorType.*;
-import static com.example.final_pr.enums.Heating.ELECTRIC;
-import static com.example.final_pr.enums.RoomType.HALL;
-import static com.example.final_pr.enums.UserRole.ADMIN;
 
 @Configuration
 @EnableGlobalMethodSecurity(prePostEnabled = true)

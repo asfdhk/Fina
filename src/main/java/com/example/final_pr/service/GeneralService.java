@@ -186,14 +186,4 @@ public class GeneralService {
         return customUsersRepository.findById(id).get();
     }
 
-    @Transactional
-    public void deleteFlat(Flat flat){
-        List<Bathroom> bathrooms =flat.getBathrooms();
-        bathrooms.forEach(x-> bathroomRepository.delete(x));
-        kitchenRepository.delete(flat.getKitchen());
-        List<Room> rooms = flat.getRooms();
-        rooms.forEach(x-> roomRepository.delete(x));
-        flatRepository.delete(flat);
-    }
-
 }

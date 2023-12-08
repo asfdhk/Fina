@@ -36,7 +36,8 @@ public class MainController {
     private final PasswordEncoder passwordEncoder;
     private final GeneralService generalService;
 
-    public MainController(GeneralService generalService,PasswordEncoder passwordEncoder){
+    public MainController(GeneralService generalService,
+                          PasswordEncoder passwordEncoder){
         this.generalService = generalService;
         this.passwordEncoder = passwordEncoder;
     }
@@ -63,7 +64,8 @@ public class MainController {
         return "index";
     }
 
-    @GetMapping("/create_flat")@PreAuthorize("hasRole('ROLE_ADMIN')")
+    @GetMapping("/create_flat")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String createFlat(){
         return "flat";
     }
