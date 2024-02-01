@@ -20,11 +20,11 @@
         </tr>
         <tr th:each="a:${bathroom}">
           <td th:text="${a.getArea()}"></td>
-          <td th:text="${a.isBath()}"></td>
-          <td th:text="${a.isShower()}"></td>
-          <td th:text="${a.isMirror()}"></td>
-          <td th:text="${a.isWashingMachine()}"></td>
-          <td th:text="${a.isBoiler()}"></td>
+          <td th:text="${a.getBath()}"></td>
+          <td th:text="${a.getShower()}"></td>
+          <td th:text="${a.getMirror()}"></td>
+          <td th:text="${a.getWashingMachine()}"></td>
+          <td th:text="${a.getBoiler()}"></td>
           <td th:text="${a.getFloor()}"></td>
         </tr>
       </thead>

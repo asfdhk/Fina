@@ -35,9 +35,9 @@ public class Flat {
     @Enumerated(EnumType.STRING)
     private Heating heating;
 
-    private boolean balcony;
+    private Boolean balcony;
 
-    private boolean gas;
+    private Boolean gas;
 
 
     @OneToMany(mappedBy = "flat",cascade = CascadeType.ALL)
@@ -51,7 +51,7 @@ public class Flat {
 
 
     private Flat(String address, Integer price, Integer area, Integer storey,
-                 Heating heating, boolean balcony, boolean gas){
+                 Heating heating, Boolean balcony, Boolean gas){
         this.address = address;
         this.price = price;
         this.area = area;
@@ -62,7 +62,7 @@ public class Flat {
     }
 
     public static Flat of(String address, Integer price, Integer area, Integer storey,
-                          Heating heating, boolean balcony, boolean gas){
+                          Heating heating, Boolean balcony, Boolean gas){
         return new Flat(address,price,area,storey,heating,balcony,gas);
     }
 
@@ -70,7 +70,7 @@ public class Flat {
 
     public static Flat fromDTO(FlatDTO flatDTO){
         return Flat.of(flatDTO.getAddress(), flatDTO.getPrice(), flatDTO.getArea(),
-                flatDTO.getStorey(), flatDTO.getHeating(),flatDTO.isBalcony(), flatDTO.isGas());
+                flatDTO.getStorey(), flatDTO.getHeating(),flatDTO.getBalcony(), flatDTO.getGas());
     }
 
     public void addBathroom(Bathroom bathroom){

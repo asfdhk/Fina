@@ -16,9 +16,9 @@ public class RoomDTO {
 
     private Integer area;
 
-    private boolean tv;
+    private Boolean tv;
 
-    private boolean board;
+    private Boolean board;
 
     @Enumerated(EnumType.STRING)
     private FloorType floor;
@@ -26,7 +26,7 @@ public class RoomDTO {
     @Enumerated(EnumType.STRING)
     private RoomType type;
 
-    private RoomDTO(Integer area, boolean tv, boolean board,FloorType floor, RoomType type){
+    private RoomDTO(Integer area, Boolean tv, Boolean board,FloorType floor, RoomType type){
         this.area = area;
         this.tv = tv;
         this.board = board;
@@ -34,7 +34,7 @@ public class RoomDTO {
         this.type = type;
     }
 
-    public static RoomDTO of(Integer area, boolean tv, boolean board,FloorType floor, RoomType type){
+    public static RoomDTO of(Integer area, Boolean tv, Boolean board,FloorType floor, RoomType type){
         return new RoomDTO(area, tv, board, floor, type);
     }
 }

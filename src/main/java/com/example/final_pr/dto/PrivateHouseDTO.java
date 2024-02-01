@@ -23,12 +23,12 @@ public class PrivateHouseDTO {
     @Enumerated(EnumType.STRING)
     private Heating heating;
 
-    private boolean garage;
+    private Boolean garage;
 
-    private boolean gas;
+    private Boolean gas;
 
     private PrivateHouseDTO(String address, Integer price, Integer area, Integer amountStoreys,
-                            Heating heating, boolean garage, boolean gas){
+                            Heating heating, Boolean garage, Boolean gas){
         this.address = address;
         this.price = price;
         this.area = area;

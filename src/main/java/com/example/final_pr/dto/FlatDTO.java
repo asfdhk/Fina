@@ -27,23 +27,13 @@ public class FlatDTO {
     @Enumerated(EnumType.STRING)
     private Heating heating;
 
-    private boolean balcony;
+    private Boolean balcony;
 
-    private boolean gas;
+    private Boolean gas;
 
-    @JsonCreator
-    public FlatDTO(@JsonProperty(required = true) String address,
-                   @JsonProperty(required = true) Integer price,
-                   @JsonProperty(required = true) Integer area,
-                   @JsonProperty(required = true) Integer storey) {
-        this.address = address;
-        this.area = area;
-        this.price = price;
-        this.storey= storey;
-    }
 
     private FlatDTO( String address, Integer price, Integer area, Integer storey,
-                   Heating heating, boolean balcony, boolean gas){
+                   Heating heating, Boolean balcony, Boolean gas){
         this.address = address;
         this.price = price;
         this.area = area;
@@ -56,7 +46,7 @@ public class FlatDTO {
 
 
     public static FlatDTO of(String address, Integer price, Integer area, Integer storey,
-                             Heating heating, boolean balcony, boolean gas){
+                             Heating heating, Boolean balcony, Boolean gas){
         return new FlatDTO(address,price,area,storey,heating,balcony,gas);
     }
 

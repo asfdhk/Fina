@@ -14,21 +14,21 @@ public class BathroomDTO {
 
     private Integer area;
 
-    private boolean bath;
+    private Boolean bath;
 
-    private boolean shower;
+    private Boolean shower;
 
-    private boolean mirror;
+    private Boolean mirror;
 
-    private boolean washingMachine;
+    private Boolean washingMachine;
 
-    private boolean boiler;
+    private Boolean boiler;
 
     @Enumerated(EnumType.STRING)
     private FloorType floor;
 
-    private BathroomDTO(Integer area, boolean bath, boolean shower,
-                        boolean mirror, boolean washingMachine, boolean boiler, FloorType floor){
+    private BathroomDTO(Integer area, Boolean bath, Boolean shower,
+                        Boolean mirror,Boolean washingMachine, Boolean boiler, FloorType floor){
         this.area = area;
         this.bath = bath;
         this.shower = shower;
@@ -38,8 +38,8 @@ public class BathroomDTO {
         this.floor = floor;
     }
 
-    public static BathroomDTO of(Integer area, boolean bath, boolean shower,
-                                 boolean mirror, boolean washingMachine,boolean boiler, FloorType floor){
+    public static BathroomDTO of(Integer area, Boolean bath,Boolean shower,
+                                 Boolean mirror, Boolean washingMachine,Boolean boiler, FloorType floor){
         return new BathroomDTO(area, bath, shower, mirror, washingMachine, boiler, floor);
     }
 }

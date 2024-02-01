@@ -20,15 +20,15 @@ public class Bathroom {
 
     private Integer area;
 
-    private boolean bath;
+    private Boolean bath;
 
-    private boolean shower;
+    private Boolean shower;
 
-    private boolean mirror;
+    private Boolean mirror;
 
-    private boolean washingMachine;
+    private Boolean washingMachine;
 
-    private boolean boiler;
+    private Boolean boiler;
 
     @Enumerated(EnumType.STRING)
     private FloorType floor;
@@ -41,8 +41,8 @@ public class Bathroom {
     @JoinColumn(name = "private_house_id")
     private PrivateHouse privateHouse;
 
-    private Bathroom (Integer area ,boolean bath, boolean shower, boolean mirror,
-                      boolean washingMachine, boolean boiler, FloorType floor){
+    private Bathroom (Integer area ,Boolean bath, Boolean shower, Boolean mirror,
+                      Boolean washingMachine, Boolean boiler, FloorType floor){
         this.area = area;
         this.bath = bath;
         this.shower = shower;
@@ -52,8 +52,8 @@ public class Bathroom {
         this.floor = floor;
     }
 
-    public static Bathroom of(Integer area, boolean bath, boolean shower, boolean mirror,
-                              boolean washingMachine, boolean boiler, FloorType floor){
+    public static Bathroom of(Integer area, Boolean bath, Boolean shower, Boolean mirror,
+                              Boolean washingMachine, Boolean boiler, FloorType floor){
         return new Bathroom(area,bath,shower,mirror,washingMachine,boiler,floor);
     }
 
@@ -62,8 +62,8 @@ public class Bathroom {
     }
 
     public static Bathroom fromDTO(BathroomDTO bathroomDTO){
-        return Bathroom.of(bathroomDTO.getArea(), bathroomDTO.isBath(), bathroomDTO.isShower(),
-                bathroomDTO.isMirror(), bathroomDTO.isWashingMachine(), bathroomDTO.isBoiler(), bathroomDTO.getFloor());
+        return Bathroom.of(bathroomDTO.getArea(), bathroomDTO.getBath(), bathroomDTO.getShower(),
+                bathroomDTO.getMirror(), bathroomDTO.getWashingMachine(), bathroomDTO.getBoiler(), bathroomDTO.getFloor());
     }
 
 }

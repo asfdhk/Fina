@@ -40,8 +40,8 @@
                 <td th:text="${a.getArea()}"></td>
                 <td th:text="${a.getStorey()}"></td>
                 <td th:text="${a.getHeating().toString()}"></td>
-                <td th:text="${a.isBalcony()}"></td>
-                <td th:text="${a.isGas()}"></td>
+                <td th:text="${a.getBalcony()}"></td>
+                <td th:text="${a.getGas()}"></td>
                 <td th:text="${a.getRooms().size()}"></td>
                 <td th:text="${a.getBathrooms().size()}"></td>
             </tr>
@@ -83,8 +83,8 @@
                 <td th:text="${a.getArea()}"></td>
                 <td th:text="${a.getAmountStoreys()}"></td>
                 <td th:text="${a.getHeating().toString()}"></td>
-                <td th:text="${a.isGarage}"></td>
-                <td th:text="${a.isGas()}"></td>
+                <td th:text="${a.getGarage}"></td>
+                <td th:text="${a.getGas()}"></td>
                 <td th:text="${a.getRooms().size()}"></td>
                 <td th:text="${a.getBathrooms().size()}"></td>
             </tr>

@@ -17,8 +17,8 @@
     </tr>
     <tr th:each="a:${rooms}">
         <td th:text="${a.getArea()}"></td>
-        <td th:text="${a.isTv()}"></td>
-        <td th:text="${a.isBoard()}"></td>
+        <td th:text="${a.getTv()}"></td>
+        <td th:text="${a.getBoard()}"></td>
         <td th:text="${a.getFloor()}"></td>
         <td th:text="${a.getType()}"></td>
     </tr>

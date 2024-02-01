@@ -14,21 +14,21 @@ public class KitchenDTO {
 
     private Integer area;
 
-    private boolean dishWash;
+    private Boolean dishWash;
 
-    private boolean microwaveOven;
+    private Boolean microwaveOven;
 
-    private boolean refrigerator;
+    private Boolean refrigerator;
 
-    private boolean oven;
+    private Boolean oven;
 
-    private boolean cooker;
+    private Boolean cooker;
 
     @Enumerated(EnumType.STRING)
     private FloorType floor;
 
-    private KitchenDTO(Integer area, boolean dishWash, boolean microwaveOven,
-                       boolean refrigerator, boolean oven, boolean cooker,FloorType floor){
+    private KitchenDTO(Integer area, Boolean dishWash, Boolean microwaveOven,
+                       Boolean refrigerator, Boolean oven, Boolean cooker,FloorType floor){
         this.area = area;
         this.dishWash = dishWash;
         this.microwaveOven = microwaveOven;
@@ -38,8 +38,8 @@ public class KitchenDTO {
         this.floor = floor;
     }
 
-    public static KitchenDTO of(Integer area, boolean dishWash, boolean microwaveOven,
-                                boolean refrigerator, boolean oven, boolean cooker,FloorType floor){
+    public static KitchenDTO of(Integer area, Boolean dishWash, Boolean microwaveOven,
+                                Boolean refrigerator, Boolean oven, Boolean cooker,FloorType floor){
         return new KitchenDTO(area, dishWash, microwaveOven, refrigerator, oven, cooker,floor);
     }
 }

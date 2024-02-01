@@ -18,9 +18,9 @@ public class Room {
 
     private Integer area;
 
-    private boolean tv;
+    private Boolean tv;
 
-    private boolean board;
+    private Boolean board;
 
     @Enumerated(EnumType.STRING)
     private FloorType floor;
@@ -36,7 +36,7 @@ public class Room {
     @JoinColumn(name = "private_house_id")
     private PrivateHouse privateHouse;
 
-    private Room(Integer area, boolean tv, boolean board, FloorType floor, RoomType type){
+    private Room(Integer area, Boolean tv, Boolean board, FloorType floor, RoomType type){
         this.area = area;
         this.tv = tv;
         this.board = board;
@@ -44,7 +44,7 @@ public class Room {
         this.type = type;
     }
 
-    public static Room of(Integer area, boolean tv, boolean board, FloorType floor, RoomType type){
+    public static Room of(Integer area, Boolean tv, Boolean board, FloorType floor, RoomType type){
         return new Room(area,tv,board,floor,type);
     }
 
@@ -53,7 +53,7 @@ public class Room {
     }
 
     public static Room fromDTO(RoomDTO roomDTO){
-        return Room.of(roomDTO.getArea(), roomDTO.isTv(), roomDTO.isBoard(),
+        return Room.of(roomDTO.getArea(), roomDTO.getTv(), roomDTO.getBoard(),
                 roomDTO.getFloor(), roomDTO.getType());
     }
 }

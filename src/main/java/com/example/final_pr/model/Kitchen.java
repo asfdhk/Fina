@@ -17,15 +17,15 @@ public class Kitchen {
 
     private Integer area;
 
-    private boolean dishWash;
+    private Boolean dishWash;
 
-    private boolean microwaveOven;
+    private Boolean microwaveOven;
 
-    private boolean refrigerator;
+    private Boolean refrigerator;
 
-    private boolean oven;
+    private Boolean oven;
 
-    private boolean cooker;
+    private Boolean cooker;
 
     @Enumerated(EnumType.STRING)
     private FloorType floor;
@@ -38,8 +38,8 @@ public class Kitchen {
     @JoinColumn(name = "private_house_id")
     private PrivateHouse privateHouse;
 
-    private Kitchen(Integer area , boolean dishWash, boolean microwaveOven,
-                    boolean refrigerator, boolean oven, boolean cooker, FloorType floor){
+    private Kitchen(Integer area , Boolean dishWash, Boolean microwaveOven,
+                    Boolean refrigerator, Boolean oven, Boolean cooker, FloorType floor){
         this.area = area;
         this.dishWash = dishWash;
         this.microwaveOven = microwaveOven;
@@ -49,8 +49,8 @@ public class Kitchen {
         this.floor = floor;
     }
 
-    public static Kitchen of(Integer area , boolean dishWash, boolean microwaveOven,
-                             boolean refrigerator, boolean oven, boolean cooker, FloorType floor){
+    public static Kitchen of(Integer area , Boolean dishWash, Boolean microwaveOven,
+                             Boolean refrigerator, Boolean oven, Boolean cooker, FloorType floor){
         return new Kitchen(area,dishWash,microwaveOven,refrigerator,oven,cooker,floor);
     }
 
@@ -59,8 +59,8 @@ public class Kitchen {
     }
 
     public static Kitchen fromDTO(KitchenDTO kitchenDTO){
-        return Kitchen.of(kitchenDTO.getArea(), kitchenDTO.isDishWash(), kitchenDTO.isMicrowaveOven(),
-                kitchenDTO.isRefrigerator(), kitchenDTO.isOven(), kitchenDTO.isCooker(), kitchenDTO.getFloor());
+        return Kitchen.of(kitchenDTO.getArea(), kitchenDTO.getDishWash(), kitchenDTO.getMicrowaveOven(),
+                kitchenDTO.getRefrigerator(), kitchenDTO.getOven(), kitchenDTO.getCooker(), kitchenDTO.getFloor());
     }
 
 

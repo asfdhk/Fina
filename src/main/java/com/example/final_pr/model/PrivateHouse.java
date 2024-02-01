@@ -35,9 +35,9 @@ public class PrivateHouse {
     @Enumerated(EnumType.STRING)
     private Heating heating;
 
-    private boolean garage;
+    private Boolean garage;
 
-    private boolean gas;
+    private Boolean gas;
 
     @OneToMany(mappedBy = "privateHouse",cascade = CascadeType.ALL)
     private List<Room> rooms = new ArrayList<>();
@@ -49,7 +49,7 @@ public class PrivateHouse {
     private Kitchen kitchen;
 
     private PrivateHouse(String address,Integer price,Integer area,Integer amountStoreys,
-                         Heating heating, boolean garage,boolean gas){
+                         Heating heating, Boolean garage,Boolean gas){
         this.address = address;
         this.price = price;
         this.area = area;
@@ -60,7 +60,7 @@ public class PrivateHouse {
     }
 
     public static PrivateHouse of(String address,Integer price,Integer area,Integer amountStoreys,
-                                  Heating heating, boolean garage,boolean gas){
+                                  Heating heating, Boolean garage,Boolean gas){
         return new PrivateHouse(address,price,area,amountStoreys,heating,garage,gas);
     }
 
@@ -68,8 +68,8 @@ public class PrivateHouse {
 
     public static PrivateHouse fromDTO(PrivateHouseDTO privateHouseDTO){
         return PrivateHouse.of(privateHouseDTO.getAddress(), privateHouseDTO.getPrice(), privateHouseDTO.getArea(),
-                privateHouseDTO.getAmountStoreys(),privateHouseDTO.getHeating(), privateHouseDTO.isGarage(),
-                privateHouseDTO.isGas());
+                privateHouseDTO.getAmountStoreys(),privateHouseDTO.getHeating(), privateHouseDTO.getGarage(),
+                privateHouseDTO.getGas());
     }
 
     public void addBathroom(Bathroom bathroom){
