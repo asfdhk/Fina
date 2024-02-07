@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <title>Prog Academy</title>
@@ -16,12 +16,15 @@
             <label>Login</label>
         </div>
 
+
         <div class="txt_field">
             <input type="password" name="j_password" required>
             <span></span>
             <label>Password</label>
         </div>
         <input type="submit" value="Login">
+
+        <label th:if="${param.error ne null}" class="error">Your login details are incorrect</label>
 
         <div class="signup_link">
             <a href="/register">Register new user</a>

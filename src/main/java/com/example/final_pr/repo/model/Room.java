@@ -1,4 +1,4 @@
-package com.example.final_pr.model;
+package com.example.final_pr.repo.model;
 
 import com.example.final_pr.dto.RoomDTO;
 import com.example.final_pr.enums.FloorType;

@@ -1,7 +1,6 @@
 package com.example.final_pr.config;
 
-import com.example.final_pr.dto.*;
-import com.example.final_pr.enums.FloorType;
+
 import com.example.final_pr.enums.UserRole;
 import com.example.final_pr.service.GeneralService;
 import org.springframework.boot.CommandLineRunner;

@@ -1,4 +1,4 @@
-package com.example.final_pr.model;
+package com.example.final_pr.repo.model;
 
 import javax.persistence.*;
 import com.example.final_pr.dto.CustomUserDTO;

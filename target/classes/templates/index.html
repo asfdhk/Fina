@@ -4,103 +4,107 @@
     <title>Prog Academy</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-
 </head>
     <body>
-        <p><td th:text="${user.getRole()}"></td></p>
-        <p><td th:if="${not (user.getNumberPhone().isEmpty())}" th:text="'Number phone: '+${user.getNumberPhone()}"></td></p>
+    <p><td th:text="${user.getRole().toString()}"></td></p>
+    <p><td th:if="${not (user.getNumberPhone().isEmpty())}" th:text="'Number phone: '+${user.getNumberPhone()}"></td></p>
 
-        <div class="c">
-            <button type="button" id="kitchen_data">Kitchen</button>
-            <button type="button" id="bathroom_data">Bathroom</button>
-            <button type="button" id="room_data">Room</button>
-        </div>
+    <div class="c">
+        <button type="button" id="kitchen_data">Kitchen</button>
+        <button type="button" id="bathroom_data">Bathroom</button>
+        <button type="button" id="room_data">Room</button>
+    </div>
 
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <td></td>
-                    <th scope="col">Address</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Area</th>
-                    <th scope="col">Storey</th>
-                    <th scope="col">Heating</th>
-                    <th scope="col">Balcony</th>
-                    <th scope="col">Gas</th>
-                    <th scope="col">Rooms</th>
-                    <th scope="col">Bathrooms</th>
-                </tr>
-            </thead>
-            <tr th:each="a:${list.content}">
-                <td><input  type="checkbox" name="flat_id" th:value="${a.getId()}"></td>
-                <td th:text="${a.getAddress()}"></td>
-                <td th:text="${a.getPrice()}"></td>
-                <td th:text="${a.getArea()}"></td>
-                <td th:text="${a.getStorey()}"></td>
-                <td th:text="${a.getHeating().toString()}"></td>
-                <td th:text="${a.getBalcony()}"></td>
-                <td th:text="${a.getGas()}"></td>
-                <td th:text="${a.getRooms().size()}"></td>
-                <td th:text="${a.getBathrooms().size()}"></td>
-            </tr>
-        </table>
-        <div>
+    <table >
+        <thead>
+        <tr>
+            <td></td>
+            <th scope="col">Address</th>
+            <th scope="col">Price</th>
+            <th scope="col">Area</th>
+            <th scope="col">Storey</th>
+            <th scope="col">Heating</th>
+            <th scope="col">Balcony</th>
+            <th scope="col">Gas</th>
+            <th scope="col">Rooms</th>
+            <th scope="col">Bathrooms</th>
+        </tr>
+        </thead>
+        <tr th:each="a:${list.content}">
+            <td><input  type="checkbox" name="flat_id" th:value="${a.getId()}"></td>
+            <td th:text="${a.getAddress()}"></td>
+            <td th:text="${a.getPrice()}"></td>
+            <td th:text="${a.getStorey()}"></td>
+            <td th:text="${a.getArea()}"></td>
+            <td th:text="${a.getHeating().toString()}"></td>
+            <td th:text="${a.getBalcony()}"></td>
+            <td th:text="${a.getGas()}"></td>
+            <td th:text="${a.getRooms().size()}"></td>
+            <td th:text="${a.getBathrooms().size()}"></td>
+        </tr>
+    </table>
+
+
+
+    <div class="page">
         <span>Page:</span>
         <span th:each="i : ${#numbers.sequence(0, list.totalPages - 1)}">
-            <a th:href="@{/(page=${i})}" th:text="${i} + 1"></a>
-        </span>
-        </div>
+        <a th:href="@{/(page=${i})}" th:text="${i} + 1"></a>
+    </span>
+    </div>
 
+    <div th:if="${user.getRole().toString() == 'ROLE_ADMIN'}" class="link">
+        <a href="/create_flat">add_flat</a>
+    </div>
 
-        <p><a href="/create_flat">add_flat</a></p>
+    <div class="c">
+        <button type="button" id="kitchen_data_house">Kitchen</button>
+        <button type="button" id="bathroom_data_house">Bathroom</button>
+        <button type="button" id="room_data_house">Room</button>
+    </div>
+    <table>
+        <thead>
+        <tr>
+            <td></td>
+            <th scope="col">Address</th>
+            <th scope="col">Price</th>
+            <th scope="col">Area</th>
+            <th scope="col">Amount Storey</th>
+            <th scope="col">Heating</th>
+            <th scope="col">Garage</th>
+            <th scope="col">Gas</th>
+            <th scope="col">Rooms</th>
+            <th scope="col">Bathrooms</th>
+        </tr>
+        </thead>
+        <tr th:each="a:${houses.content}">
+            <td><input  type="checkbox" name="house_id" th:value="${a.getId()}"></td>
+            <td th:text="${a.getAddress()}"></td>
+            <td th:text="${a.getPrice()}"></td>
+            <td th:text="${a.getArea()}"></td>
+            <td th:text="${a.getAmountStoreys()}"></td>
+            <td th:text="${a.getHeating().toString()}"></td>
+            <td th:text="${a.getGarage}"></td>
+            <td th:text="${a.getGas()}"></td>
+            <td th:text="${a.getRooms().size()}"></td>
+            <td th:text="${a.getBathrooms().size()}"></td>
+        </tr>
+    </table>
 
-        <div class="c">
-            <button type="button" id="kitchen_data_house">Kitchen</button>
-            <button type="button" id="bathroom_data_house">Bathroom</button>
-            <button type="button" id="room_data_house">Room</button>
-        </div>
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <td></td>
-                <th scope="col">Address</th>
-                <th scope="col">Price</th>
-                <th scope="col">Area</th>
-                <th scope="col">Amount Storey</th>
-                <th scope="col">Heating</th>
-                <th scope="col">Garage</th>
-                <th scope="col">Gas</th>
-                <th scope="col">Rooms</th>
-                <th scope="col">Bathrooms</th>
-            </tr>
-            </thead>
-            <tr th:each="a:${houses.content}">
-                <td><input  type="checkbox" name="house_id" th:value="${a.getId()}"></td>
-                <td th:text="${a.getAddress()}"></td>
-                <td th:text="${a.getPrice()}"></td>
-                <td th:text="${a.getArea()}"></td>
-                <td th:text="${a.getAmountStoreys()}"></td>
-                <td th:text="${a.getHeating().toString()}"></td>
-                <td th:text="${a.getGarage}"></td>
-                <td th:text="${a.getGas()}"></td>
-                <td th:text="${a.getRooms().size()}"></td>
-                <td th:text="${a.getBathrooms().size()}"></td>
-            </tr>
-        </table>
+    <div class="page">
+        <span>Page:</span>
+        <span th:each="i : ${#numbers.sequence(0, houses.totalPages - 1)}">
+        <a th:href="@{/(pageH=${i})}" th:text="${i} + 1"></a>
+    </span>
+    </div>
 
-        <div>
-            <span>Page:</span>
-            <span th:each="i : ${#numbers.sequence(0, houses.totalPages - 1)}">
-            <a th:href="@{/(pageH=${i})}" th:text="${i} + 1"></a>
-        </span>
-        </div>
-
+    <div th:if="${user.getRole().toString() == 'ROLE_ADMIN'}"  class="link">
         <p><a href="/create_house">add_house</a></p>
+    </div>
 
+    <div class="link">
         <p><a href="/logout">log_out</a></p>
-
+    </div>
 
         <script>
             $('#kitchen_data').click(function () {

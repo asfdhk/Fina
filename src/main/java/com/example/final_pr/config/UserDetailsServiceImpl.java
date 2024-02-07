@@ -1,6 +1,6 @@
 package com.example.final_pr.config;
 
-import com.example.final_pr.model.CustomUser;
+import com.example.final_pr.repo.model.CustomUser;
 import com.example.final_pr.service.GeneralService;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

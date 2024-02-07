@@ -1,6 +1,6 @@
 package com.example.final_pr.repo;
 
-import com.example.final_pr.model.CustomUser;
+import com.example.final_pr.repo.model.CustomUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

@@ -2,23 +2,18 @@ package com.example.final_pr.service;
 
 import com.example.final_pr.dto.*;
 import com.example.final_pr.enums.UserRole;
-import com.example.final_pr.model.*;
+
 import com.example.final_pr.repo.*;
+import com.example.final_pr.repo.model.*;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.List;
-
-import static com.example.final_pr.enums.FloorType.PARQUET;
-import static com.example.final_pr.enums.Heating.ELECTRIC;
 
 @Service
 public class GeneralService {
-
-
 
     private final BathroomRepository bathroomRepository;
 

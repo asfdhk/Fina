@@ -12,6 +12,11 @@ body{
     height: 100vh;
     overflow: hidden;
 }
+.center h1{
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid silver;
+}
 .center{
     position: absolute;
     top: 50%;
@@ -72,7 +77,7 @@ form .txt_field{
 }
 .pass{
     margin: -5px 0 20px 5px;
-    color: #a6a6a6;
+    color: #bbbbbb;
     cursor: pointer;
 }
 .pass:hover{
@@ -94,16 +99,4 @@ input[type="submit"]:hover{
     border-color: #2691d9;
     transition: .5s;
 }
-.signup_link{
-    margin: 30px 0;
-    text-align: center;
-    font-size: 16px;
-    color: #666666;
-}
-.signup_link a{
-    color: #2691d9;
-    text-decoration: none;
-}
-.signup_link a:hover{
-    text-decoration: underline;
-}
+

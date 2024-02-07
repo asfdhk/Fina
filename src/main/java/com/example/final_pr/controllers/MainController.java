@@ -5,7 +5,8 @@ import com.example.final_pr.enums.FloorType;
 import com.example.final_pr.enums.Heating;
 import com.example.final_pr.enums.RoomType;
 import com.example.final_pr.enums.UserRole;
-import com.example.final_pr.model.*;
+import com.example.final_pr.repo.model.Flat;
+import com.example.final_pr.repo.model.PrivateHouse;
 import com.example.final_pr.service.GeneralService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -117,8 +118,6 @@ public class MainController {
 
         return "redirect:/";
     }
-
-
 
     @GetMapping("/login")
     public String login(){

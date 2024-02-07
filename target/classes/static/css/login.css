@@ -98,6 +98,10 @@ input[type="submit"]:hover{
     border-color: #2691d9;
     transition: .5s;
 }
+.error{
+    font-size: 14px;
+    color: red;
+}
 .signup_link{
     margin: 30px 0;
     text-align: center;
